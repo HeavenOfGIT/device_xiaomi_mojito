@@ -248,3 +248,9 @@ PRODUCT_COPY_FILES += \
 #GAPPS_VARIANT := pico
 #GAPPS_FORCE_MATCHING_DPI := true
 #WITH_DEXPREOPT := true
+
+# Binder
+PRODUCT_PACKAGES += \
+    libhwbinder \
+    libhwbinder.vendor \
+    libhidltransport
