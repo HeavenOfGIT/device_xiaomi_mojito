@@ -1,14 +1,12 @@
 [
  {
-   "repository"  : "kernel_xiaomi_mojito",
+   "repository"  : "MumetNgoding/Kernel_Xiaomi_Mojito",
    "target_path" : "kernel/xiaomi/mojito",
-   "remote"      : "pixel-devices",
-   "branch"      : "eleven"
+   "branch"      : "silont"
  },
  {
-   "repository"  : "vendor_xiaomi_mojito",
+   "repository"  : "boedhack/vendor_xiaomi_mojito",
    "target_path" : "vendor/xiaomi/mojito",
-   "remote"      : "pixel-devices-blobs",
    "branch"      : "eleven"
  },
  {
