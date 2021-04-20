@@ -236,3 +236,9 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
+
+# GAPPS
+GAPPS_VARIANT := pico
+
+# Config Variant
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk
