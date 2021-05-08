@@ -1,0 +1,25 @@
+# Audio
+audio.sys.noisy.broadcast.delay=500
+audio.sys.mute.latency.factor=2
+audio.sys.routing.latency=300
+audio.offload.min.duration.secs=30
+audio.sys.offload.pstimeout.secs=3
+
+# Blurs (hidden under dev option)
+ro.surface_flinger.supports_background_blur=1
+persist.sys.sf.disable_blurs=1
+ro.sf.blurs_are_expensive=1
+
+# VoLTE
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# Shutdown
+ro.build.shutdown_timeout=2
+
+# Telephony
+ro.telephony.default_network=22,20
+
+# Zygote Preforking
+persist.device.config.runtime_native.uasp_pool_enabled=true
