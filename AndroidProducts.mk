@@ -9,6 +9,7 @@ PRODUCT_MAKEFILES := \
 
 
 COMMON_LUNCH_CHOICES := \
+    lineage_mojito-user \
     lineage_mojito-userdebug \
     lineage_mojito-eng
 
