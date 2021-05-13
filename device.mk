@@ -143,7 +143,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
     AospFrameworkResOverlay \
@@ -235,3 +236,8 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
+
+# Soong namespaces 
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \ 
+    kernel/xiaomi/mojito
