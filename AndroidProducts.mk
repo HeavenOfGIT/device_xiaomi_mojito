@@ -12,4 +12,3 @@ COMMON_LUNCH_CHOICES := \
     aosp_mojito-user \
     aosp_mojito-userdebug \
     aosp_mojito-eng
-
