@@ -9,6 +9,6 @@ PRODUCT_MAKEFILES := \
 
 
 COMMON_LUNCH_CHOICES := \
-       aosp_mojito-user \ 
-       aosp_mojito-userdebug \
-       aosp_mojito-eng
+    lineage_mojito-user \
+    lineage_mojito-userdebug \
+    lineage_mojito-eng
