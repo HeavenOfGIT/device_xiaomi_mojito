@@ -16,6 +16,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Get GApps
+$(call inherit-product, vendor/gapps/gapps.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
 
@@ -238,9 +241,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
 
 # GAPPS
-GAPPS_VARIANT := pico
-GAPPS_FORCE_MATCHING_DPI := true
-WITH_DEXPREOPT := true
-
-# Config Variant
-$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+#GAPPS_VARIANT := pico
+#GAPPS_FORCE_MATCHING_DPI := true
+#WITH_DEXPREOPT := true
