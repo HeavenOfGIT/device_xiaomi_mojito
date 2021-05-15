@@ -239,6 +239,8 @@ PRODUCT_COPY_FILES += \
 
 # GAPPS
 GAPPS_VARIANT := pico
+GAPPS_FORCE_MATCHING_DPI : = true
+WITH_DEXPREOPT : = true
 
 # Config Variant
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk
