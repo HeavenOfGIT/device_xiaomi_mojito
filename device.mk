@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get GApps
-$(call inherit-product, vendor/gapps/gapps.mk)
+#$(call inherit-product, vendor/gapps/gapps.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
@@ -258,3 +258,16 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     libhidltransport
+
+# GApps
+USE_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+
+# APEX (only enable for gapps builds)
+export TARGET_SUPPORTS_UPDATABLE_APEX=true
+
+# GMS
+ifeq ($(WITH_GMS),true)
+    $(call inherit-product, vendor/gms/products/gms.mk)
+endif
