@@ -265,9 +265,7 @@ TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
 
 # APEX (only enable for gapps builds)
-export TARGET_SUPPORTS_UPDATABLE_APEX=true
+TARGET_SUPPORTS_UPDATABLE_APEX := true
 
 # GMS
-ifeq ($(WITH_GMS),true)
-    $(call inherit-product, vendor/gms/products/gms.mk)
-endif
+$(call inherit-product, vendor/gms/products/gms.mk)
