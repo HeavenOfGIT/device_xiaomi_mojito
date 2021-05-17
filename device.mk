@@ -260,9 +260,9 @@ PRODUCT_PACKAGES += \
     libhidltransport
 
 # GApps
-USE_GAPPS := true
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
+#USE_GAPPS := true
+#TARGET_GAPPS_ARCH := arm64
+#IS_PHONE := true
 
 # APEX (only enable for gapps builds)
 TARGET_SUPPORTS_UPDATABLE_APEX := true
