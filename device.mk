@@ -268,4 +268,4 @@ IS_PHONE := true
 TARGET_SUPPORTS_UPDATABLE_APEX := true
 
 # GMS
-$(call inherit-product, vendor/gms/products/gms.mk)
+#$(call inherit-product, vendor/gms/products/gms.mk)
