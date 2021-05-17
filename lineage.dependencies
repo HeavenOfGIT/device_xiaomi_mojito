@@ -7,7 +7,7 @@
  {
    "repository"  : "boedhack/vendor_xiaomi_mojito",
    "target_path" : "vendor/xiaomi/mojito",
-   "branch"      : "eleven"
+   "branch"      : "11.0"
  },
  {
    "repository"  : "vendor_xiaomi_mojito-vendor",
