@@ -215,4 +215,4 @@ include vendor/xiaomi/mojito-vendor/BoardConfig.mk
 # GMS
 #ifeq ($(WITH_GMS),true)
     #include vendor/gms/products/board.mk
-endif
+#endif
