@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get GApps
-#$(call inherit-product, vendor/gapps/gapps.mk)
+#$(call inherit-product, vendor/gapps/config.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
@@ -248,11 +248,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
 
-# GAPPS
-#GAPPS_VARIANT := pico
-#GAPPS_FORCE_MATCHING_DPI := true
-#WITH_DEXPREOPT := true
-
 # Binder
 PRODUCT_PACKAGES += \
     libhwbinder \
@@ -260,9 +255,9 @@ PRODUCT_PACKAGES += \
     libhidltransport
 
 # GApps
-#USE_GAPPS := true
-#TARGET_GAPPS_ARCH := arm64
-#IS_PHONE := true
+USE_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
 
 # APEX (only enable for gapps builds)
 TARGET_SUPPORTS_UPDATABLE_APEX := true
