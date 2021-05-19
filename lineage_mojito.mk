@@ -12,9 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/mojito/device.mk)
 
 # Inherit some common LineageOS stuff
-TARGET_USES_AOSP_RECOVERY := true
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
@@ -30,4 +27,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=mojito
 
 # GApps
-TARGET_INCLUDE_GAPPS := true
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
