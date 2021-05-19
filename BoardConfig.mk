@@ -42,7 +42,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 VENDOR_CMDLINE := "androidboot.console=ttyMSM0 androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x880000 loop.max_part=7 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=1 msm_rtb.filter=0x237 video=vfb:640x400,bpp=32,memsize=3072000 reboot=panic_warm androidboot.init_fatal_reboot_target=recovery"
-TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
+#TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
