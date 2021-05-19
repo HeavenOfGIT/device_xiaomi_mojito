@@ -53,8 +53,6 @@ BOARD_KERNEL_CMDLINE += swiotlb=1
 BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 BOARD_KERNEL_CMDLINE += reboot=panic_warm androidboot.init_fatal_reboot_target=recovery"
-
-#TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
