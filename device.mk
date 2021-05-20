@@ -16,9 +16,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# Get GApps
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
-
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
 
@@ -73,10 +70,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-# Force triple frame buffers
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -151,7 +144,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-havoc
 
 PRODUCT_PACKAGES += \
     AospFrameworkResOverlay \
@@ -172,10 +165,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     NotchBarKiller
-
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -247,15 +236,3 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
-
-# Binder
-PRODUCT_PACKAGES += \
-    libhwbinder \
-    libhwbinder.vendor \
-    libhidltransport
-
-# APEX (only enable for gapps builds)
-TARGET_SUPPORTS_UPDATABLE_APEX := true
-
-# GMS
-#$(call inherit-product, vendor/gms/products/gms.mk)

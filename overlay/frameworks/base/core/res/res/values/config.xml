@@ -62,6 +62,7 @@
          and the screen off animation has been performed. -->
      <bool name="config_dozeAfterScreenOffByDefault">false</bool>
      <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
+     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
     <!--  Whether Multiuser UI should be shown -->
      <bool name="config_enableMultiUserUI">true</bool>
@@ -187,10 +188,6 @@
     -->
      <fraction name="config_maximumScreenDimRatio">29.999996%</fraction>
 
-    <!-- Enables or disables fading edges when marquee is enabled in TextView.
-         Off by default, since the framebuffer readback used to implement the
-         fading edges is prohibitively expensive on most GPUs. -->
-    <bool name="config_ui_enableFadingMarquee">true</bool>
     <!-- Operating volatage for bluetooth controller. 0 by default-->
      <integer name="config_bluetooth_operating_voltage_mv">0</integer>
 
@@ -506,31 +503,7 @@
         <item>0:2:15</item>
     </string-array>
 
-    <!-- QS System Info -->
-    <string name="config_sysCPUTemp">/sys/devices/virtual/thermal/thermal_zone0/temp</string> 
-    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string> 
-    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string> 
-    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string> 
-    <integer name="config_sysCPUTempMultiplier">1000</integer>
-    <integer name="config_sysBatteryTempMultiplier">10</integer>
-
-    <!-- We don't not have a multicolored LED -->
-    <bool name="config_multiColorBatteryLed">false</bool>
-
-    <!-- Smart charging -->
-    <bool name="config_smartChargingAvailable">true</bool>
-
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
-    <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
-
-     <!-- Control whether the always on display mode is enabled by default. This value will be used
-         during initialization when the setting is still null. -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
-
-    <!-- Amount of time in ms the user needs to press the relevant keys to trigger the
-         screenshot chord -->
-    <integer name="config_screenshotChordKeyTimeout">0</integer>
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">false</bool>
 
 </resources>

@@ -25,13 +25,4 @@
 
     <!-- Threshold in micro watts above which a charger is rated as "fast"; 1.375 A @ 4.00 V = 5.50 W -->
     <integer name="config_chargingFastThreshold">5500000</integer>
-
-    <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
-         does not work well, particularly with noisy touchscreens. Note that disabling it may
-         increase the rate of unintentional unlocks. -->
-    <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
-
-    <!-- FPSInfoService Fps file path -->
-    <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
-
 </resources>
