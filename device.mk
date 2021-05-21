@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# Force triple frame buffers
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -130,13 +134,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
 
-
-# Prebuilt Kernel
-#ifeq ($(TARGET_PREBUILT_KERNEL),)
-#    ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-#        LOCAL_KERNEL := device/xiaomi/mojito/Image
-#endif
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti
@@ -173,6 +170,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     NotchBarKiller
+
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -245,4 +246,11 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
 
+# Binder
+PRODUCT_PACKAGES += \
+    libhwbinder \
+    libhwbinder.vendor \
+    libhidltransport
 
+# APEX (only enable for gapps builds)
+TARGET_SUPPORTS_UPDATABLE_APEX := true
