@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The PixelExperience Project
+# Copyright (C) 2021 havocOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from mojito device
 $(call inherit-product, device/xiaomi/mojito/device.mk)
 
-# Inherit some common PixelExperience stuff
+# Inherit some common havoc stuff
 $(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
@@ -29,3 +29,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # GApps
 WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORT_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
