@@ -130,6 +130,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
 
+
+# Prebuilt Kernel
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#    ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+#        LOCAL_KERNEL := device/xiaomi/mojito/Image
+#endif
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti
@@ -237,3 +244,5 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
+
+
