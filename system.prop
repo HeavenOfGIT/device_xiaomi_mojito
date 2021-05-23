@@ -72,3 +72,10 @@ ro.hardware.wlan.vendor=qcom
 # Xiaomi
 ro.fota.oem=Xiaomi
 ro.product.mod_device=mojito_global
+
+# PPUI 
+ro.ppui.device_name=Xiaomi Redmi Note 10
+ro.ppui.version=3.5 
+ro.ppui.version_code=Jasper 
+ro.ppui.is_official=false
+ro.ppui.maintainer_name=boedhack99
