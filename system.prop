@@ -73,6 +73,9 @@ ro.hardware.wlan.vendor=qcom
 ro.fota.oem=Xiaomi
 ro.product.mod_device=mojito_global
 
+# BPF
+ro.kernel.ebpf.supported=true
+
 # PPUI 
 ro.ppui.device_name=Xiaomi Redmi Note 10
 ro.ppui.version=3.5 
