@@ -82,14 +82,14 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_mojito
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
+
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
+
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += androidboot.memcg=1
@@ -101,17 +101,15 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=1
 BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive video=vfb:640x400,bpp=32,memsize=3072000
-BOARD_KERNEL_CMDLINE+= 
-#TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-#TARGET_COMPILE_WITH_MSM_KERNEL := true
-#TARGET_KERNEL_CONFIG := mojito_defconfig
-#TARGET_KERNEL_SOURCE := kernel/xiaomi/mojito
-TARGET_FORCE_PREBUILT_KERNEL := true
+BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+#KERNEL_LD := LD=ld.lld
+#TARGET_KERNEL_ADDITIONAL_FLAGS += LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_KERNEL_CONFIG := mojito_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mojito
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
