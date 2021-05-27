@@ -25,8 +25,6 @@ $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
 # API
 PRODUCT_TARGET_VNDK_VERSION := 30
 PRODUCT_SHIPPING_API_LEVEL := 30
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
-BOARD_VNDK_VERSION := 30
 
 # ANT+
 PRODUCT_PACKAGES += \
