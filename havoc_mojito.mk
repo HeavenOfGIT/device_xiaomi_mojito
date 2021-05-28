@@ -25,12 +25,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=mojito
-    PRIVATE_BUILD_DESC="redfin-user 11 RQ2A.210505.003 7255357 release-keys"
 
 BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys
 
 # Build with GApps if GAPPS_BUILD is true
 ifeq ($(GAPPS_BUILD),true)
