@@ -139,7 +139,7 @@ void vendor_load_properties() {
     std::string region;
     std::string sku;
     region = GetProperty("ro.boot.hwc", "GLOBAL");
-    sku = GetProperty("ro.boot.product.hardware.sku", device);
+    sku = GetProperty("ro.boot.product.hardware.sku", "");
 
     std::string model;
     std::string device;
@@ -163,7 +163,8 @@ void vendor_load_properties() {
             description = "mojito-user 11 RKQ1.201022.002 V12.0.7.0.RKGMIXM release-keys";
             marketname = "Redmi Note 10";
             mod_device = "mojito";
-          }
+            }
+        }
 
     // SafetyNet workaround
     fingerprint = "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys";
