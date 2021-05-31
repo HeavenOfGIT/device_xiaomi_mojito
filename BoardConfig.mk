@@ -144,8 +144,8 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
-#Reserve space for GAPPS                                                        
-#BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 419430400                          
+# Reserve space for GAPPS                                                        
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 419430400                          
 #BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 419430400                      
 #BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 419430400
 
