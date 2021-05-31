@@ -1,7 +1,6 @@
 /*
-   Copyright (c) 2015, The Linux Foundation. All rights reserved.
-   Copyright (C) 2016 The CyanogenMod Project.
-   Copyright (C) 2019-2020 The LineageOS Project.
+   Copyright (C) 2020 The LineageOS Project.
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -14,6 +13,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -27,20 +27,13 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <fstream>
-#include <unistd.h>
 #include <vector>
 
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "property_service.h"
-#include "vendor_init.h"
-
 using android::base::GetProperty;
-using android::base::SetProperty;
-using std::string;
 
 std::vector<std::string> ro_props_default_source_order = {
     "",
@@ -52,56 +45,66 @@ std::vector<std::string> ro_props_default_source_order = {
     "vendor.",
 };
 
-void property_override(char const prop[], char const value[], bool add = true) {
+void property_override(char const prop[], char const value[], bool add = true)
+{
     prop_info *pi;
 
-    pi = (prop_info *)__system_property_find(prop);
+    pi = (prop_info *) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
     else if (add)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void vendor_load_properties() {
-    const auto set_ro_build_prop = [](const std::string &source,
-                                      const std::string &prop,
-                                      const std::string &value) {
+void set_ro_build_prop(const std::string &prop, const std::string &value) {
+    for (const auto &source : ro_props_default_source_order) {
         auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
+        if (source == "")
+            property_override(prop_name.c_str(), value.c_str());
+        else
+            property_override(prop_name.c_str(), value.c_str(), false);
+    }
+};
 
-    const auto set_ro_product_prop = [](const std::string &source,
-                                        const std::string &prop,
-                                        const std::string &value) {
+void set_ro_product_prop(const std::string &prop, const std::string &value) {
+    for (const auto &source : ro_props_default_source_order) {
         auto prop_name = "ro.product." + source + prop;
         property_override(prop_name.c_str(), value.c_str(), false);
-    };
-    
-    property_override("ro.build.fingerprint", "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys");
-    property_override("ro.build.description", "redfin-user 11 RQ2A.210305.006 7119741 release-keys");
-   
-    std::string device, model;
+    }
+};
 
-    std::string hwname = GetProperty("ro.boot.hwname", "");
+void vendor_load_properties() {
+    std::string region;
+    region = GetProperty("ro.boot.hwc", "GLOBAL");
 
-    if (hwname == "sunny") {
+    std::string model;
+    std::string device;
+    std::string fingerprint;
+    std::string mod_device;
+    std::string description;
+
+    if (region == "GLOBAL") {
+        model = "M2101K7AG";
         device = "sunny";
-        model = "Redmi Note 10";
-    } else {
+        fingerprint = "Redmi/sunny_global/sunny:11/RKQ1.201022.002/V12.0.2.0.RKGMIXM:user/release-keys";
+        mod_device = "sunny_global";
+    } else if (region == "INDIA") {
+        model = "M2101K7AG";
         device = "mojito";
-        model = "Redmi Note 10";
-    }
+        fingerprint = "Redmi/mojito/mojito:11/RKQ1.201022.002/V12.0.7.0.RKGMIXM:user/release-keys";
+        mod_device = "mojito";
+        }
 
-    // Override all partitions' props
-    string prop_partitions[] = { "", "odm.", "product.", "system.", "system_ext.", "vendor." };
-    for (const string &prop : prop_partitions) {
-        property_override(string("ro.product.") + prop + string("board"), device);
-        property_override(string("ro.product.") + prop + string("device"), device);
-        property_override(string("ro.product.") + prop + string("name"), device);
-        property_override(string("ro.product.") + prop + string("model"), model);
-        property_override(string("ro.") + prop + string("build.product"), device);
+    fingerprint = "google/coral/coral:11/RQ2A.210505.002/7246365:user/release-keys";
+    description = "coral-user 11 RQ2A.210505.002 7246365 release-keys";
+    
+    set_ro_build_prop("fingerprint", fingerprint);
+    set_ro_product_prop("device", device);
+    set_ro_product_prop("model", model);
+    if (mod_device != "") {
+        property_override("ro.product.mod_device", mod_device.c_str());
     }
-
-    // Set hardware SKU prop
-    property_override("ro.boot.product.hardware.sku", device);
+    property_override("ro.config.media_vol_steps", "7");
+    property_override("ro.config.vc_call_vol_steps", "5");
+    property_override("ro.product.system.model","Redmi Note 10");
 }
