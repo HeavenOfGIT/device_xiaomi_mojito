@@ -11,8 +11,8 @@ It was announced and released in March 2021.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-SoC     | Qualcomm Snapdragon 878
-CPU     | Octa-core (2x2.2 GHz Kryo 460 Gold & 6x1.7 GHz Kryo 460 Silver))
+SoC     | Qualcomm Snapdragon 678
+CPU     | Octa-core (2x2.2 GHz Kryo 460 Gold & 6x1.7 GHz Kryo 460 Silver)
 GPU     | Adreno 612
 Memory  | 64GB 4GB RAM
 Shipped Android Version | Android 11, MIUI 12 for Xiaomi
