@@ -20,7 +20,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
 
 # API
-PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_TARGET_VNDK_VERSION := current
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # ANT+
