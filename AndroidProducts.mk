@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_mojito.mk
+    $(LOCAL_DIR)/havoc_mojito.mk
 
 COMMON_LUNCH_CHOICES := \
     aosp_mojito-user \
