@@ -27,11 +27,16 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <fstream>
+#include <unistd.h>
 #include <vector>
 
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+
+#include "property_service.h"
+#include "vendor_init.h"
 
 using android::base::GetProperty;
 
@@ -74,8 +79,7 @@ void set_ro_product_prop(const std::string &prop, const std::string &value) {
 };
 
 void vendor_load_properties() {
-    std::string region;
-    region = GetProperty("ro.boot.hwc", "GLOBAL");
+    std::string hwname = GetProperty("ro.boot.product.hardware.sku", "");
 
     std::string model;
     std::string device;
@@ -83,12 +87,12 @@ void vendor_load_properties() {
     std::string mod_device;
     std::string description;
 
-    if (region == "GLOBAL") {
+    if (hwname == "sunny") {
         model = "M2101K7AG";
         device = "sunny";
         fingerprint = "Redmi/sunny_global/sunny:11/RKQ1.201022.002/V12.0.2.0.RKGMIXM:user/release-keys";
-        mod_device = "sunny_global";
-    } else if (region == "INDIA") {
+        mod_device = "sunny";
+    } else if (hwname == "mojito") {
         model = "M2101K7AG";
         device = "mojito";
         fingerprint = "Redmi/mojito/mojito:11/RKQ1.201022.002/V12.0.7.0.RKGMIXM:user/release-keys";
