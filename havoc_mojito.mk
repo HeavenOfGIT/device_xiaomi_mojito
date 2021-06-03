@@ -13,6 +13,7 @@ $(call inherit-product, device/xiaomi/mojito/device.mk)
 
 # Inherit some common havoc stuff
 $(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := havoc_mojito
@@ -22,7 +23,7 @@ PRODUCT_MODEL := Redmi Note 10
 PRODUCT_MANUFACTURER := Xiaomi
 
 BUILD_FINGERPRINT := google/coral/coral:11/RQ2A.210505.002/7246365:user/release-keys
-BUILD_DISPLAY_ID := RQ2A.210505.003
+BUILD_DISPLAY_ID := RQ2A.210505.002
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="mojito-user 11 RKQ1.201022.002 V12.0.7.0.RKGMIXM release-keys" \
