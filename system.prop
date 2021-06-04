@@ -20,7 +20,7 @@ persist.vendor.service.bdroid.soc.alwayson=true
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aac
 
 # Charger
-ro.charger.enable_suspend=1
+ro.charger.enable_suspend=true
 persist.vendor.cp.fcc_main_ua=400000
 persist.vendor.cp.taper_term_mv=6500
 
