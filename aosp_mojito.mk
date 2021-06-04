@@ -40,5 +40,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # GApps
-USE_GAPPS := true
+WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
