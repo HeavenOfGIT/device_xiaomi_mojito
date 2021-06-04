@@ -198,8 +198,6 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # VNDK
 BOARD_VNDK_VERSION := current
-LOCAL_SDK_VERSION := current
-DISPLAY_BUILD_NUMBER := false
 
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
