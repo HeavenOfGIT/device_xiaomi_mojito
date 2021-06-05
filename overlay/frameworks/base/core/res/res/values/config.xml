@@ -528,15 +528,23 @@
          and one pSIM) -->
      <integer name="config_num_physical_slots">2</integer>
 
+    <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
+        the framework from using higher refresh rates, even if display modes with higher refresh
+        rates are available from hardware composer. Only has an effect if the value is
+        non-zero. -->
+    <integer name="config_defaultPeakRefreshRate">90</integer>
+
     <!-- Screen brightness used to dim the screen when the user activity
-         timeout expires.  May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-     <integer name="config_screenBrightnessDim">22</integer>
+        timeout expires.  May be less than the minimum allowed brightness setting
+        that can be set by the user. -->
+    <integer name="config_screenBrightnessDim">11</integer>
+    <item type="dimen" name="config_screenBrightnessDimFloat">-2.0</item>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
-         May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-     <integer name="config_screenBrightnessDoze">17</integer>
+        May be less than the minimum allowed brightness setting
+        that can be set by the user. -->
+    <integer name="config_screenBrightnessDoze">1</integer>
+    <item type="dimen" name="config_screenBrightnessDozeFloat">-2.0</item>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
