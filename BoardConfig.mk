@@ -197,6 +197,9 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 HEALTHD_USE_BATTERY_INFO := true
 
+# VNDK
+BOARD_VNDK_VERSION := current
+
 # Inherit from the proprietary version
 include vendor/xiaomi/mojito/BoardConfigVendor.mk
 
