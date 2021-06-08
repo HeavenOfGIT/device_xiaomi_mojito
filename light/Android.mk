@@ -13,14 +13,14 @@ LOCAL_REQUIRED_MODULES := \
     android.hardware.lights-service.mojito.rc
 
 LOCAL_SHARED_LIBRARIES := \
-        libbase \
-        libhardware \
-        libbinder_ndk \
-        android.hardware.light-ndk_platform
+    libbase \
+    libhardware \
+    libbinder_ndk \
+    android.hardware.light-ndk_platform
 
 LOCAL_SRC_FILES := \
-        Light.cpp \
-        service.cpp
+    Light.cpp \
+    service.cpp
 
 include $(BUILD_EXECUTABLE)
 
