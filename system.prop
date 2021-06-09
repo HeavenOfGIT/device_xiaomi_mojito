@@ -58,6 +58,9 @@ ro.vendor.use_data_netmgrd=true
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
+# Optimized Scrolling
+ro.vendor.perf.scroll_opt=true
+
 # Time
 persist.timed.enable=true
 
