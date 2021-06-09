@@ -47,6 +47,13 @@ ro.hardware.fp.sideCap=true
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
+# Memori Optimized
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_age=5000
+ro.am.reschedule_service=true
+ro.sys.fw.bg_apps_limit=24
+
 # Netflix
 ro.netflix.bsp_rev=Q6150-17263-1
 
