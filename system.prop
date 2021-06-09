@@ -47,7 +47,7 @@ ro.hardware.fp.sideCap=true
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
-# Memori Optimized
+# Memory Optimized
 ro.vendor.qti.sys.fw.bservice_enable=true
 ro.sys.fw.bservice_limit=5
 ro.sys.fw.bservice_age=5000
