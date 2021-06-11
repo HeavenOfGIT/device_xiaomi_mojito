@@ -53,8 +53,8 @@ void vendor_load_properties()
 {
     string device, model;
 
-    string fp = "google/coral/coral:11/RQ2A.210505.002/7246365:user/release-keys";
-    string desc = "coral-user 11 RQ2A.210505.002 7246365 release-keys";
+    string fp = "google/coral/coral:11/RQ3A.210605.005/7349499:user/release-keys";
+    string desc = "coral-user 11 RQ3A.210605.005 7349499 release-keys";
 
     string hwname = GetProperty("ro.boot.hwname", "");
 
