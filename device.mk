@@ -105,7 +105,8 @@ PRODUCT_PACKAGES += \
 
 # Configstore
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.capabilityconfigstore@1.0
+    disable_configstore
+#    vendor.qti.hardware.capabilityconfigstore@1.0
 
 # Cryptfs
 PRODUCT_PACKAGES += \
@@ -166,7 +167,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.qti-mojito
+    android.hardware.lights-service.qti
 
 # Media
 PRODUCT_PACKAGES += \
@@ -178,8 +179,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-pe
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
     AospFrameworkResOverlay \
@@ -222,9 +222,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/qcom-caf/bootctrl \
-    hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/qcom-caf/bootctrl
 
 # Power
 PRODUCT_PACKAGES += \
