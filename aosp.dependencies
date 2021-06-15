@@ -7,13 +7,10 @@
  {
    "repository"  : "vendor_xiaomi_mojito",
    "target_path" : "vendor/xiaomi/mojito",
-   "remote"      : "pixel-devices-blobs",
-   "branch"      : "eleven"
+   "branch"      : "11"
  },
  {
-   "repository"  : "vendor_xiaomi_mojito-vendor",
-   "target_path" : "vendor/xiaomi/mojito-vendor",
-   "remote"      : "pixel-devices-blobs",
-   "branch"      : "eleven"
+    "repository": "android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi"
  }
 ]
