@@ -1,0 +1,19 @@
+[
+ {
+   "repository"  : "MumetNgoding/Kernel_Xiaomi_Mojito",
+   "target_path" : "kernel/xiaomi/mojito",
+   "branch"      : "silont"
+ },
+ {
+   "repository"  : "vendor_xiaomi_mojito",
+   "target_path" : "vendor/xiaomi/mojito",
+   "remote"      : "pixel-devices-blobs",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "vendor_xiaomi_mojito-vendor",
+   "target_path" : "vendor/xiaomi/mojito-vendor",
+   "remote"      : "pixel-devices-blobs",
+   "branch"      : "eleven"
+ }
+]

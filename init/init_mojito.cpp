@@ -53,17 +53,17 @@ void vendor_load_properties()
 {
     string device, model;
 
-    string hwname = GetProperty("ro.boot.hwname", "");
+    string fp = "google/coral/coral:11/RQ3A.210605.005/7349499:user/release-keys";
+    string desc = "coral-user 11 RQ3A.210605.005 7349499 release-keys";
 
-    string fingerprint = "google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys";
-    string description = "redfin-user 11 RQ2A.210505.003 7255357 release-keys";
+    string hwname = GetProperty("ro.boot.hwname", "");
 
     if (hwname == "sunny") {
         device = "sunny";
-        model = "M2101K7AG";
+        model = "Redmi Note 10";
     } else {
         device = "mojito";
-        model = "M2101K7AG";
+        model = "Redmi Note 10";
     }
 
     // Override all partitions' props
@@ -74,6 +74,8 @@ void vendor_load_properties()
         property_override(string("ro.product.") + prop + string("name"), device);
         property_override(string("ro.product.") + prop + string("model"), model);
         property_override(string("ro.") + prop + string("build.product"), device);
+        property_override(string("ro.") + prop + string("build.fingerprint"), fp);
+        property_override(string("ro.") + prop + string("build.description"), desc);
     }
 
     // Set hardware SKU prop
