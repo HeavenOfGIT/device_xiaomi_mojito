@@ -246,6 +246,3 @@ BOARD_VNDK_VERSION := current
 
 # Inherit from the proprietary version
 include vendor/xiaomi/mojito/BoardConfigVendor.mk
-
-# Inherit Prebuilt Vendor Images
-include vendor/xiaomi/mojito-vendor/BoardConfig.mk
