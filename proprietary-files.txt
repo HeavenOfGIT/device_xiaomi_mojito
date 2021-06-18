@@ -179,7 +179,7 @@ vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 
 # Bootctrl
 vendor/etc/init/android.hardware.boot@1.1-service.rc
--vendor/etc/vintf/manifest/android.hardware.boot@1.1.xml
+#-vendor/etc/vintf/manifest/android.hardware.boot@1.1.xml
 -vendor/etc/vintf/manifest/android.hardware.keymaster@4.1-service-default-qti.xml
 vendor/lib64/libboot_control_qti.so
 vendor/lib64/hw/android.hardware.boot@1.0-impl-1.1-qti.so
