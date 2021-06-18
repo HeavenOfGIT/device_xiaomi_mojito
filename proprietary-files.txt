@@ -1718,7 +1718,7 @@ vendor/etc/wifi/fstman.ini
 vendor/etc/wifi/icm.conf
 
 # WiFi Display
--framework/WfdCommon.jar
+#-framework/WfdCommon.jar
 system_ext/bin/wfdservice
 system_ext/etc/init/wfdservice.rc
 system_ext/etc/wfdconfigsink.xml
