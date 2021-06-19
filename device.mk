@@ -475,6 +475,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/qcom-caf/bootctrl \
+    $(LOCAL_PATH) \
     hardware/xiaomi
 
 # Thermal
