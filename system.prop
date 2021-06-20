@@ -20,7 +20,7 @@ persist.vendor.service.bdroid.soc.alwayson=true
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aac
 
 # Charger
-ro.charger.enable_suspend=1
+ro.charger.enable_suspend=true
 persist.vendor.cp.fcc_main_ua=400000
 persist.vendor.cp.taper_term_mv=6500
 
@@ -37,9 +37,6 @@ ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.protected_contents=true
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
-debug.cpurend.vsync=false
-sys.display-size=1920x1080
-vendor.video.disable.ubwc=1
 
 # DPM
 persist.dpm.feature=1
@@ -47,11 +44,15 @@ persist.dpm.feature=1
 # Fingerprint
 ro.hardware.fp.sideCap=true
 
-# Scroll optimization
-ro.vendor.perf.scroll_opt=true
-
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# Memory Optimized
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_age=5000
+ro.am.reschedule_service=true
+ro.sys.fw.bg_apps_limit=24
 
 # Netflix
 ro.netflix.bsp_rev=Q6150-17263-1
@@ -63,6 +64,9 @@ ro.vendor.use_data_netmgrd=true
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Optimized Scrolling
+ro.vendor.perf.scroll_opt=true
 
 # Time
 persist.timed.enable=true
@@ -78,3 +82,8 @@ ro.hardware.wlan.vendor=qcom
 # Xiaomi
 ro.fota.oem=Xiaomi
 ro.product.mod_device=mojito_global
+
+# Zram
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
