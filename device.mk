@@ -171,7 +171,6 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libxml2 \
     GcamGo \
-    vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0.vendor
 
 PRODUCT_COPY_FILES += \
