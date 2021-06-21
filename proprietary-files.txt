@@ -1053,6 +1053,7 @@ system_ext/etc/permissions/embms.xml
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/telephonyservice.xml
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 system_ext/framework/embmslibrary.jar
 system_ext/framework/qcrilhook.jar
 system_ext/framework/qti-telephony-common.jar
