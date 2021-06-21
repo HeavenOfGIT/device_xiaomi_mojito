@@ -187,12 +187,6 @@ PRODUCT_PACKAGES += \
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
-#    vendor.qti.hardware.capabilityconfigstore@1.0
-
-# Cryptfs
-PRODUCT_PACKAGES += \
-    libcryptfs_hw \
-    vendor.qti.hardware.cryptfshw@1.0
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
