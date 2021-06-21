@@ -31,3 +31,7 @@
 #
 cp /vendor/etc/sensors/scripts/* /data/vendor/sensors/scripts/
 chmod a+rw /data/vendor/sensors/scripts/*
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice

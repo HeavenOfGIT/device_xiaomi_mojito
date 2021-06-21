@@ -41,3 +41,5 @@ libxmi_high_dynamic_range.so 64
 libanc_dc_plugin_xiaomi_v2.so 64
 libmiStereoFactoryRemapBasicLib.so 64
 libmiStereoFactoryRemapLib_v2.so 64
+libprotobuf-cpp-full.so
+libprotobuf-cpp-lite.so
