@@ -222,11 +222,17 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/qcom-caf/bootctrl
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/qcom-caf/bootctrl \
+    hardware/xiaomi
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mojito
+    android.hardware.power-service.xiaomi-libperfmgr
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Telephony
 PRODUCT_PACKAGES += \
