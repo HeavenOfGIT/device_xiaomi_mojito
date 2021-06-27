@@ -29,7 +29,6 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # A/B
 AB_OTA_UPDATER := true
-
 AB_OTA_PARTITIONS := \
     boot \
     dtbo \
@@ -157,7 +156,6 @@ HWUI_COMPILE_FOR_PERF := true
 
 # Power
 TARGET_USES_INTERACTION_BOOST := true
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 TARGET_HAL_POWER_RW_INPUT_DEVICE := true
 TARGET_TAP_TO_WAKE_NODE := "/dev/input/event3"
 
