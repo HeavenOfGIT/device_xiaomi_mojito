@@ -505,7 +505,7 @@
     <!-- Screen brightness used to dim the screen when the user activity
         timeout expires.  May be less than the minimum allowed brightness setting
         that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">13</integer>
+    <integer name="config_screenBrightnessDim">3</integer>
     <item type="dimen" name="config_screenBrightnessDimFloat">-2.0</item>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
@@ -783,7 +783,6 @@
 
     <!-- Brightness changing -->
     <integer name="config_screenBrightnessDark">1</integer>
-    <integer name="config_screenBrightnessDim">3</integer>
     <integer name="config_autoBrightnessInitialLightSensorRate">-1</integer>
     <integer name="config_autoBrightnessLightSensorRate">100</integer>
 
