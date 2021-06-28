@@ -202,6 +202,10 @@ BOARD_VNDK_VERSION := current
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 HEALTHD_USE_BATTERY_INFO := true
 
+# Smartcharge
+TARGET_SMARTCHARGE_CONTROL_NODE := "/sys/class/power_supply/battery/charging_enabled"
+TARGET_SMARTCHARGE_REVERSE_LOGIC := false
+
 # Inherit from the proprietary version
 include vendor/xiaomi/mojito/BoardConfigVendor.mk
 
