@@ -126,6 +126,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
+# ‎Home
+PRODUCT_PACKAGES += \
+    home3
+
 # Init scripts
 PRODUCT_PACKAGES += \
     init.recovery.qcom.sh \

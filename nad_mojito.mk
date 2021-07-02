@@ -17,6 +17,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_USES_BLUR := true
 USE_PIXEL_CHARGING := true
+NAD_BUILD_TYPE := UNOFFICIAL
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := nad_mojito
