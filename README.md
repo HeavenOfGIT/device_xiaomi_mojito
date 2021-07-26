@@ -1,5 +1,3 @@
-This Device Tree from [ZIDAN44](https://github.com/zidan44)
-
 Device configuration for Redmi Note 10
 =========================================
 
